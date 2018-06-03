@@ -9,6 +9,17 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">OpenInsta</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "New post", new_post_path %> </li>
+          <li> <%#= link_to('Logout', destroy_user_session_path, :method => :delete) %>  </li>
+        </ul>
+      </div>
+    </nav>
     <% flash.each do |key, value| %>
       <div class="alert <%= alert_for(key) %>"><%= value %></div>
     <% end %>

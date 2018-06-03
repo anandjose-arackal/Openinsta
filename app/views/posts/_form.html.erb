@@ -1,0 +1,9 @@
+<div class="form-wrapper">
+<%= form_for @post do |f| %>
+  <%= f.file_field :image, class: 'form-group'%>
+  <%= f.text_field :caption, class:"form-control",placeholder: "Caption" %>
+  <div class="form-group text-center">
+     <%= f.submit 'Upload', class: 'btn btn-success' %>
+  </div>
+<% end %>
+</div>

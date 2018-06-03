@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
 
+
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+
   # Returns all +Posts+ for the current +User+
   # Also applies authorisation to ensure the current user is authorised to access the +Posts+.
   #
@@ -29,7 +32,7 @@ class PostsController < ApplicationController
     @post = Post.create(post_params)
     if @post.save
      flash[:success] = 'Your post created'
-    redirect_to @posts_path
+    redirect_to posts_path
    else
      flash[:alert] = 'You need an image to post here!'
      render :new
@@ -43,13 +46,38 @@ class PostsController < ApplicationController
   # @return [Post] The Post
 
   def show
-    @post = Post.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @post.update(post_params)
+      flash[:success] = "Post updated."
+      redirect_to posts_path
+    else
+      flash.now[:alert] = "Update failed.  Please check the form."
+      render :edit
+    end
+  end
+
+  def destroy
+    if @post.destroy
+      flash[:success] = "Post updated."
+    else
+      flash.now[:alert] = "Error occured"
+    end
+    redirect_to root_path
   end
 
   private
 
   def post_params
     params.require(:post).permit(:caption, :image)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
   
 end

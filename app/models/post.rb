@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
 
   validates :image, attachment_presence: true
+  validates_presence_of :caption
 
   has_attached_file :image, styles: { :medium => "640x" }
 

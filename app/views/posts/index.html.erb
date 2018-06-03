@@ -1,6 +1,3 @@
-<h1>OpenInsta</h1>
-<%= link_to "New Post", new_post_path %>
-
 <div class="posts-wrapper">
   <% @posts.each do |p| %>
       <div class="post">
@@ -8,7 +5,7 @@
           <div class="name">Anand</div>
         </div>
         <div class="image.center-block">
-          <%= link_to (image_tag p.image,class: "img-responsive" ),post_path(p) %>
+          <%= link_to (image_tag p.image.url(:medium),class: "img-responsive" ),post_path(p) %>
         </div>
         <%= p.caption %>
       </div>
