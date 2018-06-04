@@ -1,16 +1,9 @@
-
 <div class="posts-wrapper">
-  <div class="post">
-    <div class="post-head">
-      <div class="name">Anand</div>
-    </div>
-    <div class="image.center-block">
-      <%= link_to (image_tag @post.image.url(:medium),class: "img-responsive" ),"" %>
-    </div>
-    <%= @post.caption %>
+<%= render 'post', post: @post %>
+  <% if @post.user.id == current_user.id %>
     <div class="text-center">
       <%= link_to "Cancel",posts_path %>|
       <%= link_to "Edit Post", edit_post_path(@post) %>
     </div>
-  </div>
+  <% end %>
 </div>

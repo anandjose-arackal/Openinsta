@@ -1,0 +1,12 @@
+  <div class="user-name" id ="comment_<%= comment.id %>" >
+    <%= link_to comment.user.user_name, '#'%>
+    <div class ="comment-content" >
+      <%= comment.content %>
+      <% if comment.user == current_user %>
+         <%=link_to post_comment_path(post, comment), method: :delete, data: {post_id: post.id, value: post.comments.count, confirm: "Are you sure?" }, remote: true, id: "delete-#{comment.id}", class: "delete-comment" do %>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+         <% end %>
+      <% end %>
+    </div>
+  </div><br>
+<%# profile_path(comment.user.user_name)  %>

@@ -36,6 +36,8 @@ gem "paperclip", "~> 6.0.0"
 # gem for bs4 theams
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
+# gem for user auth and manage
+gem 'devise'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
