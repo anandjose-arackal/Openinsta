@@ -1,5 +1,5 @@
   <div class="user-name" id ="comment_<%= comment.id %>" >
-    <%= link_to comment.user.user_name, '#'%>
+    <%= link_to comment.user.user_name, profile_path(comment.user.user_name)%>
     <div class ="comment-content" >
       <%= comment.content %>
       <% if comment.user == current_user %>

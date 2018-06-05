@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   # @return [Array] An array of {Post Posts}
 
   def index
-    @posts = Post.all
+    @posts = Post.of_followed_users(current_user.following).order('created_at DESC')
   end
 
   # Create a new +Post+ for the current +User+
@@ -50,6 +50,10 @@ class PostsController < ApplicationController
   end
 
   def edit
+  end
+
+  def browse
+    @posts = Post.all.order('created_at DESC').page params[:page]
   end
 
   def update

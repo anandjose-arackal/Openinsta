@@ -38,7 +38,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 # gem for user auth and manage
 gem 'devise'
-
+# pageination
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

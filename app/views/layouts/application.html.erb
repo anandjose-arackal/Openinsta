@@ -15,9 +15,19 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="#">OpenInsta</a>
         </div>
+        <% if  user_signed_in? %>
+          <ul class="nav navbar-nav navbar-right">
+            <%= link_to  profile_path(current_user.user_name) do %>
+                <i class="fa fa-user" style="font-size:32px;color:deepskyblue;"></i>
+            <% end %>
+          </ul>
+        <% end %>
         <ul class="nav navbar-nav navbar-right">
+
           <% if  user_signed_in? %>
+
             <li><%= link_to "New post", new_post_path %> </li>
+            <li><%= link_to "Browse Posts", browse_posts_path %></li>
             <li> <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>  </li>
           <% else %>
              <li> <%= link_to "Login", new_user_session_path %> </li>

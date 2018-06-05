@@ -11,4 +11,7 @@ class Post < ApplicationRecord
 
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
+  scope :of_followed_users, -> (following_users) { where user_id: following_users }
+
+
 end
