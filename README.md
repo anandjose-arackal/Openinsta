@@ -4,7 +4,7 @@ Open source Clone of poplar Instgram application in Rails 5
 Rails Version 5.1.6
 Ruby version 2.5.1
 
-# Funionlities developed
+# Functionalities developed
  1 User can sign up into the Open Insta
  
  2.User have option to upadte their avthar with image, and add bio
